@@ -4,15 +4,13 @@ namespace eu.sig.training.ch02.v2
 {
     public class BoardFactory
     {
-        // tag::createBoard[]
+        
         public Board CreateBoard(Square[,] grid)
         {
             return new BoardCreator(grid).Create();
         }
-        // end::createBoard[]
     }
-
-    // tag::BoardCreator[]
+    
     internal class BoardCreator
     {
         private Square[,] grid;
@@ -53,8 +51,7 @@ namespace eu.sig.training.ch02.v2
             square.Link(neighbour, dir);
         }
     }
-
-    // end::BoardCreator[]
+    
 
     public class Board
     {
