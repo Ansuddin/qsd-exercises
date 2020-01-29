@@ -6,8 +6,7 @@ namespace eu.sig.training.ch03
 
     public class FlagFactory
     {
-
-        // tag::getFlag[]
+        
         private static Dictionary<Nationality, IList<Color>> FLAGS =
             new Dictionary<Nationality, IList<Color>>();
 
@@ -30,6 +29,5 @@ namespace eu.sig.training.ch03
             IList<Color> colors = FLAGS[nationality];
             return colors ?? new List<Color> { Color.Gray };
         }
-        // end::getFlag[]
     }
 }
