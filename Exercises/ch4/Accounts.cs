@@ -2,15 +2,14 @@
 
 namespace eu.sig.training.ch04.v1
 {
-    public static class Accounts
+    public class Accounts
     {
 
         public static CheckingAccount FindAcctByNumber(string number)
         {
             return new CheckingAccount();
         }
-
-        // tag::isValid[]
+        
         public static bool IsValid(string number)
         {
             int sum = 0;
@@ -20,6 +19,11 @@ namespace eu.sig.training.ch04.v1
             }
             return sum % 11 == 0;
         }
-        // end::isValid[]
+
+        public static Transfer GenerateTransferObject(Accounts from, string counterAccount, Money amount)
+        {
+            CheckingAccount acct = FindAcctByNumber(counterAccount);
+            return new Transfer(from, acct, amount); 
+        }
     }
 }
